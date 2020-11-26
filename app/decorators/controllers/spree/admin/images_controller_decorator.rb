@@ -14,7 +14,7 @@ module Spree
       end
 
       def viewable_ids
-        params[:image][:viewable_ids].reject(&:blank?)
+        params[:image][:viewable_ids]&.reject(&:blank?)
       end
 
       ::Spree::Admin::ImagesController.prepend self
